@@ -60,7 +60,6 @@ int main() {
     pibCap1 = pib / pop;
     pibCap2 = pib2 / pop2;
 
-
     // exibindo as informações da carta 1:
 
     printf("Carta 1: \n");
