@@ -9,8 +9,8 @@ int main() {
 
     //definição das variaveis
     char estado;
-    char codicart[3];
-    char cidade[20];
+    char codicarta[50];
+    char cidade[50];
     int pop;
     float area;
     float pib;
@@ -21,9 +21,9 @@ int main() {
     printf("Por favor, a sigla do estado referente a sua carta: \n");
     scanf(" %c", &estado);
     printf("Por favor, digite o codigo da sua carta: \n");
-    scanf("%3s", codicart);
+    scanf("%s", codicarta);
     printf("Por favor, a cidade da sua carta: \n");
-    scanf("%19s", cidade);
+    scanf("%s", cidade);
     printf("Por favor, digite quantidade populacional da sua cidade: \n");
     scanf("%d", &pop);
     printf("Por favor, digite qual a area da sua cidade: \n");
@@ -37,8 +37,8 @@ int main() {
 
     printf("Carta 1: \n");
     printf("Estado: %c\n", estado);
-    printf("Codigo: %s\n", codicart);
-    printf("Nome da Cidade: %s\n", cidade);
+    printf("Codigo da Carta: %s", codicarta);
+    printf("\nNome da Cidade: %s\n", cidade);
     printf("População: %d\n", pop);
     printf("Área: %.2f\n", area);
     printf("PIB: %.2f\n", pib);
