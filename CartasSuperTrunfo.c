@@ -11,8 +11,8 @@ int main() {
     char estado, estado2;
     char codicarta[50], codicarta2[50];
     char cidade[50], cidade2[50];
-    int pop, pop2;
-    float area, area2, pib, pib2, densi1, densi2, pibCap1, pibCap2;
+    int pop, pop2, comppop, comparea, comppib, compdensi, compPibCap, comppontoT, compsp;
+    float area, area2, pib, pib2, densi1, densi2, pibCap1, pibCap2, sp1, sp2, densi1inve, densi2inve;
     int pontoT, pontoT2;
 
     // leitura dos dados do usuario referente a primeira carta
@@ -60,6 +60,28 @@ int main() {
     pibCap1 = pib / pop;
     pibCap2 = pib2 / pop2;
 
+    //calculo para o inverso da densidade
+
+    densi1inve = 1 / densi1;
+    densi2inve = 1 / densi2;
+
+
+    //calculo do super poder da carta 1 e do super poder da carta 2
+
+    sp1 = pop + area + pib + pontoT + pibCap1 + densi1inve;
+    sp2 = pop2 + area2 + pib2 + pontoT2 + pibCap2 + densi2inve;
+
+
+    // comparação das cartas
+
+    comppop = pop > pop2;
+    comparea = area > area2;
+    comppib = pib > pib2;
+    comppontoT = pontoT > pontoT2;
+    compPibCap = pibCap1 > pibCap2;
+    compdensi = densi1inve > densi2inve;
+    compsp = sp1 > sp2;
+
     // exibindo as informações da carta 1:
 
     printf("Carta 1: \n");
@@ -87,6 +109,16 @@ int main() {
     printf("PIB per Capta: %.2f reais\n", pibCap2);
 
 
+    printf("\n \n");
 
+    // exibindo resultado da comparação
+
+    printf("População: Carta 1 Venceu (%d)\n", comppop);
+    printf("Área: Carta 1 Venceu (%d)\n", comparea);  
+    printf("PIB: Carta 1 Venceu (%d)\n", comppib);
+    printf("Pontos Turisticos: Carta 1 Venceu (%d)\n", comppontoT);
+    printf("Densidade Populacional: Carta 1 Venceu (%d)\n", compdensi);
+    printf("Pib Per Capita: Carta 1 Venceu (%d)\n", compPibCap);
+    printf("Super Poder: Carta 1 Venceu (%d)\n", compsp);
     return 0;
 }
